@@ -2,65 +2,65 @@
 
 import type React from "react"
 
-// import { Button } from "@/components/ui/button"
-// import { Card } from "@/components/ui/card"
-// import { Input } from "@/components/ui/input"
-// import { Textarea } from "@/components/ui/textarea"
-// import {
-//   ArrowRight,
-//   Package,
-//   Plane,
-//   Warehouse,
-//   FileCheck,
-//   TrendingUp,
-//   CheckCircle,
-//   Mail,
-//   Phone,
-//   MapPin,
-// } from "lucide-react"
-// import Image from "next/image"
-// import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import {
+  ArrowRight,
+  Package,
+  Plane,
+  Warehouse,
+  FileCheck,
+  TrendingUp,
+  CheckCircle,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react"
+import Image from "next/image"
+import { useState } from "react"
 
-// export default function LandingPage() {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     phone: "",
-//     message: "",
-//   })
-//   const [isSubmitting, setIsSubmitting] = useState(false)
-//   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+export default function LandingPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault()
-//     setIsSubmitting(true)
-//     setSubmitStatus("idle")
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
 
-//     try {
-//       const response = await fetch("/api/contact", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(formData),
-//       })
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-//       if (response.ok) {
-//         setSubmitStatus("success")
-//         setFormData({ name: "", email: "", phone: "", message: "" })
-//       } else {
-//         setSubmitStatus("error")
-//       }
-//     } catch (error) {
-//       console.error("Form submission error:", error)
-//       setSubmitStatus("error")
-//     } finally {
-//       setIsSubmitting(false)
-//     }
-//   }
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", phone: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
-//   return (
-//     <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#8B1538]">
         <div className="absolute inset-0 overflow-hidden">
